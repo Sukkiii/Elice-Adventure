@@ -1,0 +1,66 @@
+body {
+  margin: 0;
+}
+header {
+  background-color: #f63232;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  text-align: center;
+  /*
+  absolute : 어떤 상황이 오더라도 이 영역을 유지(scroll 변경)
+  relative: 유연하게 상황에 맞게 변동
+  fixed : 스크롤 내리면 바뀜. absolute랑 다른점
+  */
+}
+/* z-index:1 >> 맨위로 z축 기준 맨 위라고 생각하면 됨 */
+header h1 {
+  color: white;
+  border: white solid 8px;
+  padding: 6px 12px;
+  border-radius: 30px;
+  display: inline-block;
+  /* inline-block : w3school에서 살펴보아요 */
+}
+.banner {
+  /* 모바일 화면을 구성하기 위해서 */
+  position: relative;
+}
+.banner img {
+  /* 전체 화면의 100%가 됨 */
+  max-width: 100%;
+}
+.banner .welcome {
+  background: #feb614;
+  color: white;
+  font-size: 20px;
+  padding: 30px;
+  position: absolute;
+  left: 10%;
+  top: 30%;
+  padding: 30px;
+}
+nav {
+  background: #f4f4f4;
+  padding: 20px;
+  position: sticky;
+  /* top: 105px; */
+}
+nav ul {
+  white-space: nowrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+nav li {
+  width: 25%;
+  display: inline-block;
+  font-size:  24px;
+}
+nav li a {
+  text-decoration: none;
+  color: #4b4b4b;
+}
+nav li a:hover {
+  text-decoration: underline;
+}

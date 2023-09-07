@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>grid-flex</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="flex-container">
+    <div class="wrapper">
+    <!-- class에서 flex-container는 class하나로 지정이 된 것이지만, box red는 box와 red가 모두 class명임 -->
+      <div class="box red">hiß</div>
+      <!-- rem = root em html 글꼴 요소 전체적인 비율로 해서 글꼴을 따지는 것 
+        > 전체적인 html문서의 비율에 맞게 쓴 것
+        > 전체 각각에 요소요소들의 사이즈 비율을 훨씬 정교하게 가져갈 수 있어서 많이 사용하는 편 -->
+      <div class="box yellow"></div>
+    </div>
+    <div class="box green"></div>
+  </div>
+
+  <div class="grid-container">
+    <div class="gridbox red"></div>
+    <div class="gridbox yellow"></div>
+    <div class="gridbox green-grid"></div>
+  </div>
+</body>
+</html>

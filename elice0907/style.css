@@ -1,0 +1,58 @@
+    :root {
+      --paradise: #ef486f;
+      --cyayola: #ffd166;
+      --green: green;
+      --powder: #ffeaba;
+      /* 변수할당 > power라는 색을 불러오면 저 색이 적용되는 것 */
+    }
+    body {
+      background: var(--powder);
+      /* 변수할당으로 불러와서 색을 변경할 수 있음 */
+    }
+    .flex-container {
+      padding: 15%;
+      display: flex;
+      flex-direction: column;
+      width: 500px;
+    }
+
+    .wrapper {
+      display: flex;
+    }
+
+    .box {
+      /* class에 box가 있는 애들 불러오기 */
+      padding: 4rem;
+      /* margin: 10px; */
+      border: 3px;
+      border-style: dotted;
+      flex-grow: 1;
+    }
+    .grid-container{
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+      /* 1frame 1frame 1frame */
+      width: 360px;
+    }
+    .gridbox {
+      padding: 4rem;
+      /* margin: 10px; */
+      border: 3px;
+      border-style: double;
+
+    }
+    .red {
+      background-color: var(--paradise);
+      font-size: 20px;
+    }
+    .yellow {
+      background-color: var(--cyayola);
+    }
+    .green {
+      background-color: var(--green);
+    }
+    .green-grid {
+      background-color: var(--green);
+      grid-column: span 2;
+    }
