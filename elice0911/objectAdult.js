@@ -2,15 +2,15 @@
 
 // 지시사항에 따라 코드를 작성합니다.
 function getOnlyAdults (inputA) {
-  var adultsArray = [];
-  for( i=0; i < inputA.length; i++) {
+  let adultsArray = [];
+  for (let i=0; i < inputA.length; i++) {
     if (inputA[i].age >= 20) {
       adultsArray.push(inputA[i].name);
     }
   } return adultsArray;
 }
 
-var inputA = [{
+let inputA = [{
   name: "박태환",
   age: 36
 }, 

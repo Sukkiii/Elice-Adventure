@@ -7,15 +7,15 @@
 //   return array.sort().reverse();
 // }
 
-function reverseStringArray(array1) {
-  var reverseSort = array1.sort(function(a,b){
-      if(a>b) return -1;
-      else if (b>a) return 1;
-      else return 0;
+function reverseStringArray (array1) {
+  let reverseSort = array1.sort(function(a,b) {
+    if (a>b) return -1;
+    else if (b>a) return 1;
+    else return 0;
   });
   return reverseSort;
 }
 
-var inputA = ["c", "b", "d"];
+let inputA = ["c", "b", "d"];
 
 module.exports = { inputs: [inputA], func: sortStringArray }

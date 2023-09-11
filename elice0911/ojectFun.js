@@ -1,14 +1,14 @@
 // 객체 내부에 접근하는 방법
-function makeTotalPrice(inputA) {
-  var q1 = inputA.quantity1;
-  var p1 = inputA.price1;
-  var q2 = inputA.quantity2;
-  var p2 = inputA.price2;
+function makeTotalPrice (inputA) {
+  let q1 = inputA.quantity1;
+  let p1 = inputA.price1;
+  let q2 = inputA.quantity2;
+  let p2 = inputA.price2;
 
   return q1*p1 + q2*p2;
 }
 
-var inputA = {
+let inputA = {
   quantity1: 4,
   price1: 500,
   quantity2: 2,

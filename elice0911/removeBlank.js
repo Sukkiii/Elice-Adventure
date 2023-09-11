@@ -10,10 +10,10 @@
 // return result;
 // }
 
-function removeBlank2(str) {
-  var result = str.split(" ").join("");
+function removeBlank2 (str) {
+  let result = str.split(" ").join("");
   return result;
 }
-var inputA = "hello world";
+let inputA = "hello world";
 
 module.exports = { inputs: [inputA], func: removeBlank }

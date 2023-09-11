@@ -4,12 +4,12 @@
 // 3. 배열에 숫자로 바꿔서 넣는다.
 
 function getDigits (inputA) {
-  var result = inputA.toString().split("");
-  for ( i=0; i < result.length; i++) {
+  let result = inputA.toString().split("");
+  for (let i=0; i < result.length; i++) {
     result[i] = parseInt(result[i]);
   } return result;
 }
 
-var inputA = 1100
+let inputA = 1100;
 
 module.exports = { inputs: [inputA], func: getDigits }
