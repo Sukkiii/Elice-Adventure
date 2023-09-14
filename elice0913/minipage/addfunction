@@ -1,0 +1,39 @@
+미니 홈페이지를 만들기 위한 추가 기능 학습
+
+
+1) 네비게이션 기능 구현
+e.preventDefault();            // 특정 기능 정지 메서드
+xxx.querySelector("#intro");   // 1개의 태그를 css 선택자 기반으로 가져온다.
+xxx.querySelectorAll(" a ");   // 여러 개의 태그를 css 선택자 기반으로 가져온다.
+xxx.getAttribute("href");      // 특정 태그가 갖고 있는 속성의 속성값을 가져온다.
+window.scrollTo({              // 특정 지점으로 스크롤링
+  'behavior' : 'smooth',       // 부드럽게 이동
+  'top' : xxx.offsetTop        // 특정 영역의 위에서의 좌표값
+});
+
+2) 이미지 슬라이드 기능 구현
+setInterval(function(){
+  ...
+}, 3000);       // 3초 간격으로 반복적으로 코드 실행(ms단위로 받음)
+xxx.animate({
+  marginLeft: ['0px', '1024px']
+, {
+  duration: 500,
+  easing: 'ease',
+  iterations: 1;
+  fill: 'both'
+}) // 애니메이션 실행
+
+3) 탭 버튼 기능 구현하기
+xxx.classList.remove(클래스명)        // 요소에서 특정 클래스 제거
+xxx.classList.add(클래스명)           // 요소에 클래스명 추가
+NodeList.forEach(function(item) {   // 배열의 모든 요소에 코드 적용
+  console.log(item)
+})
+
+4) 이미지 슬라이드(2)
+xxx.previousElementSibling;   // 이전 요소 선택
+xxx.nextElementSibling;       // 다음 요소 선택
+xxx.parentElement;            // 부모 요소 선택
+xxx.firstElementChild;        // 첫번째 자식 요소 선택
+xxx.lastElementChild;         // 마지막 자식 요소 선택

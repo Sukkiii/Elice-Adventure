@@ -1,0 +1,11 @@
+체크 박스 기능 완성하기
+
+원래는 노란색 체크 박스가 각 박스 속에 들어가 있지만, 지금은 보이지 않는 상태입니다.
+(index.css 파일 내 .check_icon 요소의 display 속성값으로 none이 적용)
+
+css 파일을 이어서 보면, .select.on .check_icon 요소는 display를 inline-block으로 설정
+
+즉, select 클래스를 포함한 요소에 on 클래스를 추가하면,
+그 하위 요소인 check_icon 요소의 display가 inline-block으로 적용됩니다.
+
+따라서 index.js에서 박스 클릭시 .on 클래스를 추가하여 클릭된 영역의 노란색 체크 박스가 나왔다가 사라졌다 하는 기능을 추가해보자
