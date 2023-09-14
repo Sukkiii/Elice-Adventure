@@ -5,3 +5,28 @@ console.log(link.getAttribute('href'));
 // a는 태그고, href는 속성이라서 그럼
 link.setAttribute('href', 'https://www.google.com');
 link.innerHTML = '역시 검색은 구글이지';
+
+const p = document.querySelector('p');
+p.getAttribute('class');
+
+// p.setAttribute('style', 'color:green');
+
+const h2 = document.querySelector('h2');
+
+h2.style.margin = '50px';
+h2.style.color = 'red';
+h2.style.fontsize= '50px';
+
+// class를 집어넣고 빼고 하는 것
+p.classList.remove('error');
+p.classList.add('success');
+
+
+
+// console.log(getAttribute('p'));
+
+// function getAt() {
+//   console.log('hi');
+// }
+
+// getAt();
