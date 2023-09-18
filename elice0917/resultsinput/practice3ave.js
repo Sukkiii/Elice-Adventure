@@ -6,8 +6,13 @@ const rl = readline.createInterface({
 });
 
 rl.on("line", function (line) {
-  var result = line.split(' ');
-  console.log(result.join('\n'));
+  var input = line.split(' ').map((el) => parseInt(el));
+  var sum = 0;
+  for(let i=0; i<input.length; i++) {
+    sum += input[i];
+  }
+  const average = Math.floor(sum/3);
+  console.log(average);
 
   rl.close();
 }).on("close", function () {
