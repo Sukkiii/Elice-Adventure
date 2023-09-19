@@ -1,0 +1,29 @@
+body {
+  background: grey;
+}
+
+.container {
+  max-width: 400px;
+}
+
+input[type="text"],
+input[type="text"]:focus {
+/* text type의 입력 field에 css를 적용해 줄 때 분류를 위해서 저렇게 문법을 적용하는 것
+   focus는 입력을 위해 box에 들어갔을때의 효과를 말함 */
+  color: #fff;
+  border: none;
+  background: rgba(0, 0, 0, 0.2); /* a가 alpha로 마지막 것이 투명도 */
+  max-width: 400px;
+}
+
+.memos > li {
+  background: rgb(115, 83, 234);
+}
+
+.deleteBtn {
+  cursor: pointer;
+}
+
+.hidden {
+  display: none !important;
+}
