@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Template</title>
+</head>
+<style>
+#root {
+  width: 100vw;
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#root > main {
+  width: 400px;
+  overflow-x: scroll;
+  min-height: 400px;
+  border: 5px solid #e9ecef;
+  padding: 12px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+</style>
+
+<body>
+  <div id="root">
+    <main>
+      <h2>RotationEncryptor App</h2>
+
+      <div class="app">
+        <label for="message">
+          메시지
+          <input id="message" type="text" name="message">
+        </label>
+        <button id="encrypt-button">암호화하기</button>
+
+        <div id="result"></div>
+      </div>
+    </main>
+  </div>
+
+  <script src="./rotationEncryptor.js"></script>
+</body>
+
+</html>

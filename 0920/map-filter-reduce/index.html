@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Template</title>
+</head>
+<style>
+  .app {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.app>*+* {
+  margin-top: 8px;
+}
+
+#root {
+  width: 100vw;
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#root>main {
+  width: 400px;
+  overflow-x: scroll;
+  min-height: 400px;
+  border: 5px solid #e9ecef;
+  padding: 12px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
+</style>
+<body>
+  <div id="root">
+    <main>
+      <h2>Map, Filter, Reducer</h2>
+
+      <div class="app">
+        <div id="initial-value"></div>
+        <button id="map-button">map 테스트</button>
+        <button id="filter-button">filter 테스트</button>
+        <button id="reduce-button">reduce 테스트</button>
+        <div id="result"></div>
+      </div>
+    </main>
+  </div>
+
+  <script src="./Component.js"></script>
+</body>
+
+</html>
