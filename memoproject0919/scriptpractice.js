@@ -155,4 +155,9 @@ const filterMemo = memo => {
     .filter((e) => e.textContent.includes(memo))
     .forEach((e) => e.classList.remove('filtered'));
   // 질문) memotext는 콜백의 매개변수 역할. 값을 받아주는 역할로 e로 해도 되는 매개변수의 역할
+  // e대신 memod라던가 매개변수 아무거나 써도 상관없음
   }
+
+// filter라고 자바스크립트에서 제공해주는 것을 이용
+// mdn filter 검색해보기
+// https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
