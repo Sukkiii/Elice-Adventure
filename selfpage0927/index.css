@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Mooli', 'Hahmlet', sans-serif;
+}
+ 
+header {
+  background-color: #e8e8e8;
+  height: 4rem;
+  border-bottom: solid 0.3rem #d3d3d3b0;
+  display: flex;
+}
+ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: auto;
+}
+
+.menuBtn {
+  text-decoration: none;
+  padding: 0 1rem;
+  color: white;
+  text-shadow: 0 0 6px rgb(211, 61, 104);
+  font-size: 1.5rem; 
+}
+.bodyCard {
+  width: 70%;
+  height: 70%;
+  margin: 4rem auto;
+  padding: 2rem;
+  box-shadow: 0 30px 40px -15px rgba(0, 0, 0, 0.35);
+  background-color: rgb(254, 230, 234);
+}
+/* h1 {
+  font-size: 3rem;
+} */
+.nameImg img {
+  width: 100px;
+}
