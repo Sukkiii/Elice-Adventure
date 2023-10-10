@@ -13,3 +13,5 @@ app.listen(process.env.PORT, () => {
   console.log(`서버가 ${process.env.PORT}번에서 작동중입니다.`);
 })
 // 환경변수에 접근하는 것 > 3000이라는 port변수에 접근 가능
+
+// ctrl + c > 서버끄기
