@@ -1,25 +1,26 @@
 import "./App.css";
+import { melonChart as melonChartItems } from "./assets/dummy/melonChart";
 import { IoHeart } from "react-icons/io5";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
-// 좋아요 기능을 넣기위한 고민..
-// 방법 1) likeIds라는 state를 선언해서 좋아요가 눌린 id를 저장해서 좋아요가 눌린 곡을 구분한다.
-//        단점:
-//        추가 계산 필요: UI를 렌더링할 때, 각 곡이 좋아요된 상태인지 확인하기 위해 likeIds 배열을 매번 확인해야 합니다.
-//        상태 동기화: 좋아요 상태와 차트 데이터가 분리되어 있기 때문에, 두 상태 간 동기화를 신경 써야 합니다.
-// 방법 2) melonChart의 각 곡에 isLike라는 프로퍼티를 추가해서 좋아요가 눌린 곡을 구분한다.
-//        단점: 좋아요 상태를 변경할 때마다 전체 차트 데이터를 업데이트해야 합니다
-
-// 원하는 것 : api를 호출해서 데이터를 받아와서 state로 선언된 items에 담아서 사용하기
-//       >>> api 호출은 어느시점에? 로딩되자마자. (아무것도 누르지 않아도 로딩 되자마자)
-
-// use- : 훅이다. 함수형 컴포넌트에서 사용하려고 만든 것. > 클래스형 컴포넌트 X
-
+// likeIds [1, 2, 3]만 state로 선언을 해서 좋아요가 들어있는지 없는지를 check를 하자?
 function App() {
-  // const [items, setItems] = useState(melonChartItems.map((item) => ({ ...item, isLike: false })));
-  const [isLoading, setIsLoading] = useState(false);
-  const [isError, setIsError] = useState(false);
-  const [items, setItems] = useState([]);
+  // 컴포넌트가 화면에 다시 렌더링 된다는 것 > state, props가 변경되었을 때 발생
+
+  const [items, setItems] = useState(
+    melonChartItems.map((item) => ({ ...item, isLike: false }))
+  );
+
+  // 좋아요 기능을 넣기위한 고민..
+  // 방법 1) likeIds라는 state를 선언해서 좋아요가 눌린 id를 저장해서 좋아요가 눌린 곡을 구분한다.
+  //        단점:
+  //        추가 계산 필요: UI를 렌더링할 때, 각 곡이 좋아요된 상태인지 확인하기 위해 likeIds 배열을 매번 확인해야 합니다.
+  //        상태 동기화: 좋아요 상태와 차트 데이터가 분리되어 있기 때문에, 두 상태 간 동기화를 신경 써야 합니다.
+  // 방법 2) melonChart의 각 곡에 isLike라는 프로퍼티를 추가해서 좋아요가 눌린 곡을 구분한다.
+  //        단점: 좋아요 상태를 변경할 때마다 전체 차트 데이터를 업데이트해야 합니다
+
+  // 원하는 것 : api를 호출해서 데이터를 받아와서 state로 선언된 items에 담아서 사용하기
+  //       >>> api는
 
   function handleLike(index) {
     const newItems = [...items];
@@ -33,31 +34,21 @@ function App() {
     setItems(newItems);
   }
 
-  useEffect(() => {
-    setIsLoading(true);
-    fetch("https://api-ex.vercel.app/api/getMelonChart")
-      .then((res) => res.json())
-      .then((res) => {
-        console.log("fetched data", res.melonChart);
-        setItems(res.melonChart); // state가 바뀐 > 컴포넌트 리랜더링 > useEffect의 [] 빈배열을 넘겨주는 이곳 safe zone에서는 다시 실행이 되지 않음.
-        setIsError(false);
-        setIsLoading(false);
-      })
-      .catch(() => setIsError(true));
-  }, []);
+  // 문제 : counter를 업데이트 했을 뿐인데, 전체가 리랜더링이 되네?
+  // 리렌더링이 되는 이유 : state나 props가 변경되었을 때,
+  // 컴포넌트가 뭐야? 왜 그걸로 개발해야하는데? > react 구조상 리렌더링이 되는 이유가 위와 같기 때문에, 리렌더링이 필요한 부분만 리렌더링 하는것
   return (
-    <div>
-      <div style={{ display: "flex", justifyContent: "flex-start" }}>
-        <img
-          width="142"
-          height="99"
-          src="https://cdnimg.melon.co.kr/resource/image/web/common/logo_melon142x99.png"
-          alt="Melon"
-        />
-      </div>
-      {isError && <div>에러 발생!!</div>}
-      {isLoading && <div>로딩 중..</div>}
-      {!isLoading && (
+    <>
+      <Counter />
+      <div>
+        <div style={{ display: "flex", justifyContent: "flex-start" }}>
+          <img
+            width="142"
+            height="99"
+            src="https://cdnimg.melon.co.kr/resource/image/web/common/logo_melon142x99.png"
+            alt="Melon"
+          />
+        </div>
         <table>
           <thead>
             <tr>
@@ -137,11 +128,20 @@ function App() {
             })}
           </tbody>
         </table>
-      )}
+      </div>
+    </>
+  );
+}
+function Counter() {
+  const [counter, setCounter] = useState(0);
+  return (
+    <div>
+      <div>Counter: {counter}</div>
+      <button onClick={() => setCounter(counter + 1)}>+</button>
+      <button onClick={() => setCounter(counter - 1)}>-</button>
     </div>
   );
 }
-
 const commonStyle = {
   tableHead: { textAlign: "center", fontSize: 13, color: "#606060" },
 };
