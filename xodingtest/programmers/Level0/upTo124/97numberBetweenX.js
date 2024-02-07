@@ -1,1 +1,1 @@
-const solution = (myString) => myString.split('x').map((sxtr) => str.length)
+const solution = (myString) => myString.split('x').map((str) => str.length)
